@@ -1,6 +1,6 @@
 import { Flex, Input } from "@chakra-ui/react";
 
-const Search = ({ search, setSearch }) => {
+const Search = ({ search, setSearch, searchMovie }) => {
   const handleChange = (event) => {
     setSearch(event.target.value);
   };
@@ -13,6 +13,7 @@ const Search = ({ search, setSearch }) => {
         borderRadius="full"
         variant="filled"
         value={search}
+        onKeyDown={searchMovie}
       />
     </Flex>
   );

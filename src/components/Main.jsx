@@ -1,4 +1,4 @@
-import { Box, Flex, Image, SimpleGrid } from "@chakra-ui/react";
+import { Box, Flex, Image, ScaleFade, SimpleGrid } from "@chakra-ui/react";
 
 const Main = ({ movies }) => {
   return (
@@ -7,7 +7,13 @@ const Main = ({ movies }) => {
         {movies.Search?.map((item, index) => {
           return (
             <Box key={index}>
-              <Image src={item.Poster}></Image>
+              <ScaleFade
+                initialScale={0.9}
+                in={true}
+                whileHover={{ scale: 1.1 }}
+              >
+                <Image src={item.Poster}></Image>
+              </ScaleFade>
             </Box>
           );
         })}

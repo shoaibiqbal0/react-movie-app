@@ -12,7 +12,7 @@ const Main = ({ movies }) => {
                 in={true}
                 whileHover={{ scale: 1.1 }}
               >
-                <Image src={item.Poster}></Image>
+                <Image _hover={{ cursor: "pointer" }} src={item.Poster}></Image>
               </ScaleFade>
             </Box>
           );

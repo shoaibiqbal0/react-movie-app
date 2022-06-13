@@ -6,10 +6,13 @@ import {
   SimpleGrid,
   useDisclosure,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import MovieDetails from "./MovieDetails";
 
 const Main = ({ movies }) => {
+  const [data, setData] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Flex justify="center" p="5">
       <SimpleGrid columns={[2, 3, 4]} maxW="1200px" w="100%" spacing="5">
@@ -23,22 +26,25 @@ const Main = ({ movies }) => {
               >
                 <Image
                   _hover={{ cursor: "pointer" }}
-                  onClick={onOpen}
+                  onClick={() => {
+                    setData(item);
+                    onOpen();
+                  }}
                   src={item.Poster}
-                />
-                <MovieDetails
-                  title={item.Title}
-                  year={item.Year}
-                  type={item.Type}
-                  imdb={item.imdbID}
-                  isOpen={isOpen}
-                  onOpen={onOpen}
-                  onClose={onClose}
                 />
               </ScaleFade>
             </Box>
           );
         })}
+        <MovieDetails
+          title={data.Title}
+          year={data.Year}
+          type={data.Type}
+          imdb={data.imdbID}
+          isOpen={isOpen}
+          onOpen={onOpen}
+          onClose={onClose}
+        />
       </SimpleGrid>
     </Flex>
   );

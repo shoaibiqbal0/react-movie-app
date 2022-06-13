@@ -17,7 +17,7 @@ const MovieDetails = ({ title, year, type, imdb, isOpen, onClose }) => {
   return (
     <>
       <Modal size={["xs", "md"]} isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay bg="rgba(0, 0, 0, 0.35)" opacity={0} />
+        <ModalOverlay />
         <ModalContent>
           <ModalHeader>Movie Details</ModalHeader>
           <ModalCloseButton />

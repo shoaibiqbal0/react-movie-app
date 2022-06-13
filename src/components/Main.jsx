@@ -1,4 +1,5 @@
 import { Box, Flex, Image, ScaleFade, SimpleGrid } from "@chakra-ui/react";
+import MovieDetails from "./MovieDetails";
 
 const Main = ({ movies }) => {
   return (
@@ -12,7 +13,13 @@ const Main = ({ movies }) => {
                 in={true}
                 whileHover={{ scale: 1.1 }}
               >
-                <Image _hover={{ cursor: "pointer" }} src={item.Poster}></Image>
+                <Image _hover={{ cursor: "pointer" }} src={item.Poster} />
+                <MovieDetails
+                  title={item.Title}
+                  year={item.Year}
+                  type={item.Type}
+                  imdb={item.imdbID}
+                />
               </ScaleFade>
             </Box>
           );

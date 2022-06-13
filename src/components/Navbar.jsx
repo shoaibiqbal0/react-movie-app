@@ -1,5 +1,4 @@
 import { Text, VStack, IconButton, useColorMode } from "@chakra-ui/react";
-import { useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 
 const Navbar = () => {

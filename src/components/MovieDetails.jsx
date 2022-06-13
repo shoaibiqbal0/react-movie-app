@@ -24,16 +24,16 @@ const MovieDetails = ({ title, year, type, imdb, isOpen, onClose }) => {
           <ModalBody>
             <VStack align="flex-start">
               <Text>
-                <strong>Title:</strong> {title}
+                <strong>Title: </strong> {title}
               </Text>
               <Text>
-                <strong>Year:</strong> {year}
+                <strong>Year: </strong> {year}
               </Text>
               <Text>
-                <strong>Type:</strong> {type}
+                <strong>Type: </strong> {type}
               </Text>
               <Text>
-                <strong>ImdbID:</strong>{" "}
+                <strong>ImdbID: </strong>
                 <Link
                   style={{ textDecoration: "none" }}
                   href={"https://www.imdb.com/title/" + imdb}

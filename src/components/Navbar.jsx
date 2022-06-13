@@ -1,4 +1,4 @@
-import { Flex, Text, VStack, IconButton } from "@chakra-ui/react";
+import { Text, VStack, IconButton } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 
@@ -18,7 +18,12 @@ const Navbar = () => {
           onClick={handleChange}
         />
       </VStack>
-      <Text fontSize="7xl" fontWeight="bold">
+      <Text
+        bgGradient="linear(to-r, red.500, blue.500, purple.500)"
+        bgClip="text"
+        fontSize="7xl"
+        fontWeight="bold"
+      >
         Movie Search
       </Text>
     </VStack>

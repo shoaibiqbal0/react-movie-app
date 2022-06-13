@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Main from "./components/Main";
+import Navbar from "./components/Navbar";
 import Search from "./components/Search";
 
 function App() {
@@ -18,10 +19,11 @@ function App() {
   const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${search}`;
 
   return (
-    <div>
+    <>
+      <Navbar />
       <Search search={search} setSearch={setSearch} searchMovie={searchMovie} />
       <Main movies={movies} />
-    </div>
+    </>
   );
 }
 

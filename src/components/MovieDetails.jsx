@@ -10,20 +10,14 @@ import {
   ModalOverlay,
   Tag,
   Text,
-  useDisclosure,
   VStack,
 } from "@chakra-ui/react";
 
-import { FaExternalLinkAlt } from "react-icons/fa";
-
-const MovieDetails = ({ title, year, type, imdb }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+const MovieDetails = ({ title, year, type, imdb, isOpen, onClose }) => {
   return (
     <>
-      <Button onClick={onOpen}>Open Modal</Button>
-
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
+      <Modal size={["xs", "md"]} isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay bg="rgba(0, 0, 0, 0.3)" opacity={0} />
         <ModalContent>
           <ModalHeader>Movie Details</ModalHeader>
           <ModalCloseButton />

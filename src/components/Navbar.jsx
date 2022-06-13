@@ -1,28 +1,29 @@
-import { Text, VStack, IconButton } from "@chakra-ui/react";
+import { Text, VStack, IconButton, useColorMode } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const handleChange = () => {
-    setDarkMode(!darkMode);
+    toggleColorMode();
   };
 
   return (
     <VStack>
       <VStack p="5" w="100%" align="flex-end">
         <IconButton
-          icon={darkMode ? <FaSun /> : <FaMoon />}
-          isRound="true"
           onClick={handleChange}
+          icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
+          isRound="true"
         />
       </VStack>
       <Text
         bgGradient="linear(to-r, red.500, blue.500, purple.500)"
         bgClip="text"
-        fontSize="7xl"
+        fontSize={["5xl", "6xl", "7xl"]}
         fontWeight="bold"
+        p="5"
       >
         Movie Search
       </Text>

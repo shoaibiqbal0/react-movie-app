@@ -37,10 +37,10 @@ const Main = ({ movies }) => {
           );
         })}
         <MovieDetails
-          title={data.Title}
-          year={data.Year}
-          type={data.Type}
-          imdb={data.imdbID}
+          title={data?.Title}
+          year={data?.Year}
+          type={data?.Type}
+          imdb={data?.imdbID}
           isOpen={isOpen}
           onOpen={onOpen}
           onClose={onClose}

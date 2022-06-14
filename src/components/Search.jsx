@@ -14,6 +14,7 @@ const Search = ({ search, setSearch, searchMovie }) => {
         variant="filled"
         value={search}
         onKeyDown={searchMovie}
+        placeholder="Enter a movie title and press Enter to search..."
       />
     </Flex>
   );

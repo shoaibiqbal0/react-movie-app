@@ -11,7 +11,11 @@ function App() {
     if (event.key === "Enter") {
       fetch(url)
         .then((response) => response.json())
-        .then((data) => setMovies(data));
+        .then((data) => {
+          setMovies(data);
+          setSearch("");
+          event.target.blur();
+        });
     }
   };
 
